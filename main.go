@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"github.com/CptDelta/terraform-provider-mailtrap/mailtrap"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/plugin"
+)
 
 func main() {
-	fmt.Println("Hello, World!")
+	plugin.Serve(&plugin.ServeOpts{
+		ProviderFunc: mailtrap.Provider,
+	})
 }
